@@ -1,0 +1,730 @@
+/* ==========================================================================
+   Tienda y Estadero el Laguito — hoja de estilos
+   Paleta inspirada en el logo: Rojo carmesí vibrante + tonos cálidos sobre papel.
+   ========================================================================== */
+
+:root {
+    --rojo-logo: #E31E24;
+    --rojo-profundo: #7E0D12;
+    --rojo-intenso: #C4151C;
+    --rojo-suave: #FDF1F1;
+    --rojo-sombra: rgba(227, 30, 36, 0.25);
+    --dorado: #D98E18;
+    --dorado-claro: #FAD074;
+    --dorado-suave: #FFF7E8;
+    --papel: #FAF7F2;
+    --papel-hondo: #EFE7DC;
+    --blanco: #FFFFFF;
+    --tinta: #1F1917;
+    --tinta-suave: #5C554F;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Work Sans", system-ui, sans-serif;
+    color: var(--tinta);
+    background-color: var(--papel);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Cabecera
+   -------------------------------------------------------------------------- */
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.75rem;
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--papel-hondo);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.cabecera__enlace-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.cabecera__enlace-marca:hover {
+    transform: scale(1.02);
+}
+
+.cabecera__logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 2px 8px var(--rojo-sombra);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cabecera__enlace-marca:hover .cabecera__logo {
+    transform: rotate(-4deg) scale(1.06);
+    box-shadow: 0 4px 12px var(--rojo-sombra);
+}
+
+.cabecera__marca {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--rojo-profundo);
+    letter-spacing: -0.01em;
+}
+
+.cabecera__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
+.cabecera__link {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--tinta-suave);
+    text-decoration: none;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.cabecera__link:hover {
+    color: var(--rojo-logo);
+    background-color: var(--rojo-suave);
+}
+
+.cabecera__link--destacado {
+    color: var(--rojo-logo);
+    font-weight: 600;
+    background-color: var(--rojo-suave);
+    border: 1px solid rgba(227, 30, 36, 0.25);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+}
+
+.cabecera__link--destacado:hover {
+    background-color: var(--rojo-logo);
+    color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+.hero {
+    position: relative;
+    background: radial-gradient(circle at 50% 30%, #EF262D 0%, var(--rojo-intenso) 48%, var(--rojo-profundo) 100%);
+    color: var(--papel);
+    padding: 4.5rem 1.5rem 6.5rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.hero__contenido {
+    max-width: 42rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: aparece 0.8s ease-out both;
+}
+
+.hero__emblema {
+    margin: 0 auto 1.25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__logo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--rojo-logo);
+}
+
+.hero__logo:hover {
+    transform: scale(1.07) rotate(3deg);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 0 5px #FFFFFF;
+}
+
+.hero__saludo {
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dorado-claro);
+    margin-bottom: 0.6rem;
+}
+
+.hero__nombre {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 7vw, 4.1rem);
+    line-height: 1.05;
+    color: #FFFFFF;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+.hero__eslogan {
+    margin-top: 1.3rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    color: var(--papel);
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero__onda {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 90px;
+    display: block;
+}
+
+.hero__onda path {
+    fill: var(--papel);
+}
+
+/* --------------------------------------------------------------------------
+   Bloques de contenido
+   -------------------------------------------------------------------------- */
+.bloque {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+}
+
+.bloque__titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.85rem;
+    color: var(--rojo-profundo);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Pequeña marca del color del logo antes del título */
+.bloque__titulo::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 1.35rem;
+    margin-right: 0.75rem;
+    background: linear-gradient(to bottom, var(--rojo-logo), var(--rojo-profundo));
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.bloque__texto {
+    font-size: 1.08rem;
+    color: var(--tinta-suave);
+    max-width: 62ch;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   Categorías (víveres, abarrotes, construcción, licores)
+   -------------------------------------------------------------------------- */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1.75rem;
+    margin-top: 1.75rem;
+}
+
+.categoria {
+    background-color: var(--blanco);
+    border: 1px solid var(--papel-hondo);
+    border-top: 4px solid var(--rojo-logo);
+    border-radius: 8px;
+    padding: 1.4rem 1.5rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px var(--rojo-sombra);
+    border-color: rgba(227, 30, 36, 0.25);
+}
+
+.categoria__titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--rojo-profundo);
+    margin-bottom: 0.45rem;
+}
+
+.categoria__detalle {
+    font-size: 0.98rem;
+    color: var(--tinta-suave);
+    line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Subtítulos y encabezados reutilizables
+   -------------------------------------------------------------------------- */
+.seccion-encabezado {
+    margin-bottom: 1.8rem;
+}
+
+.seccion-subtitulo {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--rojo-intenso);
+    margin-bottom: 0.4rem;
+}
+
+.seccion-subtitulo--dorado {
+    color: var(--dorado);
+}
+
+/* --------------------------------------------------------------------------
+   Sección 1: El Estadero (Gran Imagen de Fondo)
+   -------------------------------------------------------------------------- */
+.estadero-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5.5rem 1.5rem;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: var(--tinta);
+}
+
+.estadero-hero__fondo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.estadero-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: transform 0.8s ease;
+}
+
+.estadero-hero:hover .estadero-hero__img {
+    transform: scale(1.03);
+}
+
+.estadero-hero__sombra {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 15, 15, 0.45) 0%,
+        rgba(31, 25, 23, 0.75) 55%,
+        rgba(15, 10, 10, 0.88) 100%
+    );
+    pointer-events: none;
+}
+
+.estadero-hero__contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.estadero-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(31, 25, 23, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 0.45rem 1.1rem;
+    border-radius: 30px;
+    color: #FFFFFF;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.estadero-hero__badge-icono {
+    font-size: 1.15rem;
+}
+
+.estadero-hero__titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    line-height: 1.1;
+    color: #FFFFFF;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.2rem;
+}
+
+.estadero-hero__texto {
+    font-size: 1.18rem;
+    color: rgba(255, 255, 255, 0.94);
+    line-height: 1.7;
+    max-width: 62ch;
+    margin: 0 auto 2rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+.estadero-hero__puntos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1.2rem;
+}
+
+.estadero-hero__punto-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.estadero-hero__punto-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Sección 2: Eventos y Fechas Especiales (Gran Video de Fondo Completo)
+   -------------------------------------------------------------------------- */
+.seccion-eventos {
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 1.5rem;
+    color: #FFFFFF;
+    background-color: #0d0808;
+}
+
+.seccion-eventos__video-contenedor {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.seccion-eventos__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    pointer-events: none;
+    user-select: none;
+}
+
+.seccion-eventos__video::-webkit-media-controls,
+.seccion-eventos__video::-webkit-media-controls-enclosure,
+.seccion-eventos__video::-webkit-media-controls-panel,
+.seccion-eventos__video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
+.seccion-eventos__sombra {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(15, 10, 10, 0.62) 0%,
+        rgba(95, 10, 15, 0.52) 50%,
+        rgba(18, 8, 10, 0.78) 100%
+    );
+    pointer-events: none;
+}
+
+.seccion-eventos__contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 58rem;
+    margin: 0 auto;
+}
+
+.seccion-eventos__encabezado {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+
+
+
+.seccion-eventos__titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    color: #FFFFFF;
+    line-height: 1.15;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.8rem;
+}
+
+.seccion-eventos__subtitulo {
+    font-size: 1.12rem;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 64ch;
+    margin: 0 auto;
+    line-height: 1.65;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas de Eventos sobre el Video de Fondo
+   -------------------------------------------------------------------------- */
+.eventos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1.8rem;
+}
+
+.evento-tarjeta {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-top: 4px solid var(--rojo-logo);
+    border-radius: 16px;
+    padding: 2.2rem 1.75rem;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.evento-tarjeta__etiqueta {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dorado-claro);
+    background-color: rgba(217, 142, 24, 0.3);
+    border: 1px solid rgba(250, 208, 116, 0.45);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1.1rem;
+    backdrop-filter: blur(4px);
+}
+
+.evento-tarjeta__icono {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.85rem;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.evento-tarjeta__nombre {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    margin-bottom: 0.65rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.evento-tarjeta__desc {
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.94);
+    line-height: 1.65;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* --------------------------------------------------------------------------
+   Contacto
+   -------------------------------------------------------------------------- */
+.bloque--contacto {
+    padding-bottom: 4.5rem;
+}
+
+.contacto {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.8rem 1.75rem;
+    align-items: baseline;
+    background-color: var(--blanco);
+    border: 1px solid var(--papel-hondo);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.contacto dt {
+    font-weight: 600;
+    color: var(--rojo-logo);
+}
+
+.contacto dd {
+    color: var(--tinta-suave);
+}
+
+/* --------------------------------------------------------------------------
+   Pie de página
+   -------------------------------------------------------------------------- */
+.pie {
+    background: linear-gradient(160deg, var(--rojo-profundo) 0%, #54080B 100%);
+    color: var(--papel);
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+    border-top: 3px solid var(--rojo-logo);
+}
+
+.pie__emblema {
+    margin-bottom: 1rem;
+}
+
+.pie__logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    opacity: 0.95;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.pie__logo:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.pie__nombre {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.pie__dato {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* --------------------------------------------------------------------------
+   Detalles: accesibilidad y responsive
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+:focus-visible {
+    outline: 3px solid var(--rojo-logo);
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes aparece {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 1.25rem;
+    }
+    .cabecera__nav {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 0.25rem;
+    }
+    .estadero-hero {
+        padding: 4rem 1.25rem;
+        min-height: 420px;
+    }
+    .seccion-eventos {
+        padding: 4.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+    .contacto {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+    .contacto dd {
+        margin-bottom: 0.7rem;
+    }
+    .cabecera__nav {
+        gap: 0.3rem 0.5rem;
+    }
+    .cabecera__link {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .hero__contenido {
+        animation: none;
+    }
+}

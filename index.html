@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda y Estadero el Laguito</title>
+
+    <!-- Favicon del logo -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Aquí el CSS se enlaza con la ruta normal, sin url_for -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <a href="#" class="cabecera__enlace-marca">
+            <img src="images/logo.png" alt="Logo de Tienda y Estadero el Laguito" class="cabecera__logo">
+            <span class="cabecera__marca">Tienda y Estadero el Laguito</span>
+        </a>
+        <nav class="cabecera__nav">
+            <a href="#quienes-somos" class="cabecera__link">Quiénes somos</a>
+            <a href="#servicios" class="cabecera__link">Qué encuentras</a>
+            <a href="#estadero" class="cabecera__link">El Estadero</a>
+            <a href="#eventos" class="cabecera__link cabecera__link--destacado">Eventos en Vivo</a>
+            <a href="#contacto" class="cabecera__link">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__contenido">
+                <div class="hero__emblema">
+                    <img src="images/logo.png" alt="Emblema Tienda y Estadero el Laguito" class="hero__logo">
+                </div>
+                <p class="hero__saludo">Bienvenido a</p>
+                <h1 class="hero__nombre">Tienda y Estadero el Laguito</h1>
+                <p class="hero__eslogan">Todo para tu casa, tu obra y tu rato libre.</p>
+            </div>
+            <svg class="hero__onda" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,48 C240,90 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"></path>
+            </svg>
+        </section>
+
+        <section class="bloque" id="quienes-somos">
+            <h2 class="bloque__titulo">Quiénes somos</h2>
+            <p class="bloque__texto">
+                El Laguito es la tienda y estadero del barrio: el lugar donde consigues
+                lo del mercado, lo que te falta para la obra y la cerveza bien fría para
+                el rato de descanso, todo en un mismo sitio. Llevamos años atendiendo a
+                los vecinos con buen precio y mejor trato.
+            </p>
+        </section>
+
+        <section class="bloque" id="servicios">
+            <h2 class="bloque__titulo">Qué encuentras aquí</h2>
+            <!-- Sin Flask no hay bucle: cada categoría se escribe directo -->
+            <div class="categorias">
+                <article class="categoria">
+                    <h3 class="categoria__titulo">Víveres</h3>
+                    <p class="categoria__detalle">
+                        Lo del diario para tu cocina: granos, aceites, enlatados y lo
+                        fresco de la semana.
+                    </p>
+                </article>
+                <article class="categoria">
+                    <h3 class="categoria__titulo">Abarrotes</h3>
+                    <p class="categoria__detalle">
+                        Aseo, papelería y todo lo de la casa que siempre hace falta a
+                        última hora.
+                    </p>
+                </article>
+                <article class="categoria">
+                    <h3 class="categoria__titulo">Materiales de construcción</h3>
+                    <p class="categoria__detalle">
+                        Cemento, arena, herramienta y lo necesario para avanzar en tu
+                        obra o arreglo.
+                    </p>
+                </article>
+                <article class="categoria">
+                    <h3 class="categoria__titulo">Licores</h3>
+                    <p class="categoria__detalle">
+                        Cervezas, gaseosas y licores fríos para acompañar el rato en el
+                        estadero.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECCIÓN 1: EL ESTADERO (GRAN IMAGEN DE FONDO)
+             ================================================================== -->
+        <section class="estadero-hero" id="estadero">
+            <div class="estadero-hero__fondo">
+                <img src="images/estadero1.jpg" alt="Instalaciones campestres de El Estadero El Laguito de día" class="estadero-hero__img">
+                <div class="estadero-hero__sombra"></div>
+            </div>
+            <div class="estadero-hero__contenido">
+                <span class="estadero-hero__badge">
+                    <span class="estadero-hero__badge-icono">🌴</span> Espacio Campestre & Familiar • De Día
+                </span>
+                <h2 class="estadero-hero__titulo">El Estadero El Laguito</h2>
+                <p class="estadero-hero__texto">
+                    Un rincón tradicional bajo la brisa y las palmeras. El punto de encuentro del barrio
+                    para descansar, compartir en familia, disfrutar de una cerveza bien fría y desconectar
+                    en un ambiente campestre, fresco y acogedor.
+                </p>
+                <div class="estadero-hero__puntos">
+                    <span class="estadero-hero__punto-item">☀️ Quiosco y mesas al aire libre</span>
+                    <span class="estadero-hero__punto-item">🍺 Cervezas y licores helados</span>
+                    <span class="estadero-hero__punto-item">👨‍👩‍👧‍👦 Ambiente 100% familiar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SECCIÓN 2: EVENTOS Y FECHAS ESPECIALES (GRAN VIDEO DE FONDO COMPLETO)
+             ================================================================== -->
+        <section class="seccion-eventos" id="eventos">
+            <!-- Video de fondo que cubre toda la sección -->
+            <div class="seccion-eventos__video-contenedor" aria-hidden="true">
+                <video id="video-estadero-bg" class="seccion-eventos__video" autoplay muted loop playsinline disablePictureInPicture disableremoteplayback controlsList="nodownload nofullscreen noremoteplayback" tabindex="-1" poster="images/amor_y_amistad_poster.jpg">
+                    <source src="videos/amor_y_amistad.mp4" type="video/mp4">
+                    Tu navegador no soporta video de fondo.
+                </video>
+                <div class="seccion-eventos__sombra"></div>
+            </div>
+
+            <div class="seccion-eventos__contenido">
+                <div class="seccion-eventos__encabezado">
+                    <h2 class="seccion-eventos__titulo">Eventos y Fechas Especiales</h2>
+                    <p class="seccion-eventos__subtitulo">
+                        Festejamos las fechas más importantes del año con orquesta en vivo, baile, picadas,
+                        buena compañía y el mejor trato de siempre. ¡Así se vive la fiesta en El Laguito!
+                    </p>
+                </div>
+
+                <div class="eventos__grid">
+                    <article class="evento-tarjeta">
+                        <div class="evento-tarjeta__etiqueta">Homenaje Anual</div>
+                        <div class="evento-tarjeta__icono">💐</div>
+                        <h3 class="evento-tarjeta__nombre">Día de las Madres</h3>
+                        <p class="evento-tarjeta__desc">
+                            Serenata especial, almuerzo típico para compartir en familia y un ambiente alegre para consentir a las mamás de nuestro barrio.
+                        </p>
+                    </article>
+
+                    <article class="evento-tarjeta">
+                        <div class="evento-tarjeta__etiqueta">Noche de Fiesta</div>
+                        <div class="evento-tarjeta__icono">❤️</div>
+                        <h3 class="evento-tarjeta__nombre">Amor y Amistad</h3>
+                        <p class="evento-tarjeta__desc">
+                            Música bailable con orquesta en vivo, bebidas heladas, pasabocas y el punto de encuentro perfecto para brindar entre amigos y parejas.
+                        </p>
+                    </article>
+
+                    <article class="evento-tarjeta">
+                        <div class="evento-tarjeta__etiqueta">Reservas y Alquiler</div>
+                        <div class="evento-tarjeta__icono">🎉</div>
+                        <h3 class="evento-tarjeta__nombre">Cumpleaños y Celebraciones</h3>
+                        <p class="evento-tarjeta__desc">
+                            Aparta tu mesa o celebra tus fechas personales con nosotros. Contamos con amplio espacio campestre, sombra y atención cercana.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bloque bloque--contacto" id="contacto">
+            <h2 class="bloque__titulo">Dónde encontrarnos</h2>
+            <dl class="contacto">
+                <dt>Dirección</dt>
+                <dd>Escribe aquí la dirección del negocio</dd>
+                <dt>Teléfono / WhatsApp</dt>
+                <dd>Escribe aquí el teléfono o WhatsApp</dd>
+                <dt>Horario</dt>
+                <dd>Escribe aquí el horario de atención</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie__emblema">
+            <img src="images/logo.png" alt="Logo de Tienda y Estadero el Laguito" class="pie__logo">
+        </div>
+        <p class="pie__nombre">Tienda y Estadero el Laguito</p>
+        <p class="pie__dato">Escribe aquí la dirección del negocio</p>
+        <p class="pie__dato">&copy; <span id="anio"></span></p>
+    </footer>
+
+    <!-- El JavaScript se enlaza al final del body -->
+    <script src="js/script.js"></script>
+</body>
+</html>
