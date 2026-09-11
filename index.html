@@ -24,7 +24,7 @@
         </a>
         <nav class="cabecera__nav">
             <a href="#quienes-somos" class="cabecera__link">Quiénes somos</a>
-            <a href="#servicios" class="cabecera__link">Qué encuentras</a>
+            <a href="#servicios" class="cabecera__link">Tienda el Laguito</a>
             <a href="#estadero" class="cabecera__link">El Estadero</a>
             <a href="#eventos" class="cabecera__link cabecera__link--destacado">Eventos en Vivo</a>
             <a href="#contacto" class="cabecera__link">Contacto</a>
@@ -56,38 +56,53 @@
             </p>
         </section>
 
-        <section class="bloque" id="servicios">
-            <h2 class="bloque__titulo">Qué encuentras aquí</h2>
-            <!-- Sin Flask no hay bucle: cada categoría se escribe directo -->
-            <div class="categorias">
-                <article class="categoria">
-                    <h3 class="categoria__titulo">Víveres</h3>
-                    <p class="categoria__detalle">
-                        Lo del diario para tu cocina: granos, aceites, enlatados y lo
-                        fresco de la semana.
-                    </p>
-                </article>
-                <article class="categoria">
-                    <h3 class="categoria__titulo">Abarrotes</h3>
-                    <p class="categoria__detalle">
-                        Aseo, papelería y todo lo de la casa que siempre hace falta a
-                        última hora.
-                    </p>
-                </article>
-                <article class="categoria">
-                    <h3 class="categoria__titulo">Materiales de construcción</h3>
-                    <p class="categoria__detalle">
-                        Cemento, arena, herramienta y lo necesario para avanzar en tu
-                        obra o arreglo.
-                    </p>
-                </article>
-                <article class="categoria">
-                    <h3 class="categoria__titulo">Licores</h3>
-                    <p class="categoria__detalle">
-                        Cervezas, gaseosas y licores fríos para acompañar el rato en el
-                        estadero.
-                    </p>
-                </article>
+        <section class="tienda-hero" id="servicios">
+            <!-- Imagen de fondo de la tienda -->
+            <div class="tienda-hero__fondo">
+                <img src="images/tienda.jfif" alt="Interior de la Tienda el Laguito con estantes llenos de productos" class="tienda-hero__img">
+                <div class="tienda-hero__sombra"></div>
+            </div>
+            <div class="tienda-hero__contenido">
+                <span class="tienda-hero__badge">
+                    <span class="tienda-hero__badge-icono">🛒</span> Tu Tienda de Barrio • Todo en un Solo Lugar
+                </span>
+                <h2 class="tienda-hero__titulo">Tienda el Laguito</h2>
+                <p class="tienda-hero__texto">
+                    Encontrarás todo lo que necesitas sin salir del barrio. Desde víveres
+                    frescos hasta materiales de obra, con el mejor precio y la atención
+                    de siempre.
+                </p>
+                <!-- Categorías sobre el fondo de imagen -->
+                <div class="tienda-hero__categorias">
+                    <article class="tienda-categoria">
+                        <div class="tienda-categoria__icono">🌽</div>
+                        <h3 class="tienda-categoria__titulo">Víveres</h3>
+                        <p class="tienda-categoria__detalle">
+                            Granos, aceites, enlatados y lo fresco de la semana para tu cocina.
+                        </p>
+                    </article>
+                    <article class="tienda-categoria">
+                        <div class="tienda-categoria__icono">🧴</div>
+                        <h3 class="tienda-categoria__titulo">Abarrotes</h3>
+                        <p class="tienda-categoria__detalle">
+                            Aseo, papelería y todo lo de la casa que siempre hace falta a última hora.
+                        </p>
+                    </article>
+                    <article class="tienda-categoria">
+                        <div class="tienda-categoria__icono">🧱</div>
+                        <h3 class="tienda-categoria__titulo">Materiales de construcción</h3>
+                        <p class="tienda-categoria__detalle">
+                            Cemento, arena, herramienta y lo necesario para tu obra o arreglo.
+                        </p>
+                    </article>
+                    <article class="tienda-categoria">
+                        <div class="tienda-categoria__icono">🍺</div>
+                        <h3 class="tienda-categoria__titulo">Licores</h3>
+                        <p class="tienda-categoria__detalle">
+                            Cervezas, gaseosas y licores fríos para acompañar el rato en el estadero.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
